@@ -142,7 +142,7 @@ class AliyunMail implements SenderModuleInterface {
 		if ($message->getReplyTo()) {
 			$replyTo = $message->getReplyTo();
 		}		
-				
+		$endpoint = $params['endpoint'];
 		$accessKeyId = $params['accessKeyId'];
 		$accessKeySecret = $params['accessKeySecret'];
 		
@@ -159,7 +159,7 @@ class AliyunMail implements SenderModuleInterface {
 		$args['htmlBody'] = $message->getBody();
 		$args['textBody'] = $message->getPlainText();
 
-		$message = self::sendMail($args, $accessKeyId, $accessKeySecret);
+		$message = self::sendMail($args, $endpoint, $accessKeyId, $accessKeySecret);
 
 		// // Set attachments
 		// foreach ($message->getAttachments() as $attachment) {
