@@ -39,8 +39,12 @@ class AliyunMail implements SenderModuleInterface {
 		return [
 			'endpoint' => [
 				'FriendlyName' => 'API 接入点',
-				'Type' => 'text',
-				'Default' => 'dm.aliyuncs.com',
+				'Type' => 'dropdown',
+				'Options' => [
+					'dm.aliyuncs.com' => '杭州',
+					'dm.ap-southeast-1.aliyuncs.com' => '新加坡',
+					'dm.ap-southeast-2.aliyuncs.com' => '悉尼',
+				],
 				'Description' => '阿里云邮件推送 API 接入点',
 			],
 			'accessKeyId' => [
